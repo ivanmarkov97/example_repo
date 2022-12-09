@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Customer List</title>
+	</head>
+	<body>
+		<h1>Top customers</h1>
+		<ul>
+		{% for customer in customers %}
+			<li>Login: {{ customer['login'] }} | password: {{ customer['password'] }}</li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>

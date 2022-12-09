@@ -1,17 +1,18 @@
 from flask import Flask
 
-from api import greeting, fetch_customers
+from api import greeting, fetch_customers, fetch_items
 
 
 def init_routes(app: Flask) -> None:
 	app.add_url_rule('/', 'greeting', greeting, methods=['GET'])
 	app.add_url_rule('/customers', 'customers', fetch_customers, methods=['GET'])
+	app.add_url_rule('/items', 'items', fetch_items, methods=['GET'])
 
 def create_app():
 	app = Flask(__name__)
 	app.config.from_object('config.ProductionConfig')
 	init_routes(app)
-
+	print(app.config['MYSQL_DB_CONFIG'])
 	return app
 
 if __name__ == '__main__':

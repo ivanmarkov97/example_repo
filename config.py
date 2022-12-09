@@ -6,7 +6,7 @@ class Config(object):
 
 class ProductionConfig(Config):
 	MYSQL_DB_HOST = os.environ.get('MYSQL_DB_HOST')
-	MYSQL_DB_PORT = os.environ.get('MYSQL_DB_PORT')
+	MYSQL_DB_PORT = int(os.environ.get('MYSQL_DB_PORT'))
 	MYSQL_DB_USER = os.environ.get('MYSQL_DB_USER')
 	MYSQL_DB_NAME = os.environ.get('MYSQL_DB_NAME')
 	MYSQL_DB_PASSWORD = os.environ.get('MYSQL_DB_PASSWORD')

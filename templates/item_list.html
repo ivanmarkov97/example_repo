@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Items List</title>
+	</head>
+	<body>
+		<h1>Top items</h1>
+		<ul>
+		{% for item in items %}
+			<li>Name: {{ item['name'] }} | price: {{ item['price'] }} | total: {{ item['total'] }}</li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>
