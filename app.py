@@ -12,7 +12,6 @@ def create_app():
 	app = Flask(__name__)
 	app.config.from_object('config.ProductionConfig')
 	init_routes(app)
-	print(app.config['MYSQL_DB_CONFIG'])
 	return app
 
 if __name__ == '__main__':
