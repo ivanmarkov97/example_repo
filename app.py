@@ -10,7 +10,6 @@ def init_routes(app: Flask) -> None:
 def create_app():
 	app = Flask(__name__)
 	app.config.from_object('config.ProductionConfig')
-	print(app.config['MYSQL_DB_CONFIG'])
 	init_routes(app)
 
 	return app
